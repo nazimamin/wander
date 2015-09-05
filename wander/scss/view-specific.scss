@@ -1,0 +1,31 @@
+.feature-grid {
+    .feature {
+        position: relative;
+        width: 50%;
+        height: 171px;
+        float: left;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+
+        &.selected {
+            .feature--name { display: none; }
+            .feature--selected { display: block; }
+        }
+    }
+
+    .feature--name {
+        margin-top: 70px;
+        color: white;
+        font-size: 1.3em;
+        text-align: center;
+    }
+
+    .feature--selected {
+        display: none;
+        margin-top: 0.73em;
+        color: white;
+        font-size: 5em;
+        text-align: center;
+    }
+}

@@ -1,9 +1,55 @@
-// Ionic Starter App
+// Wander App
 
-// angular.module is a global place for creating, registering and retrieving Angular modules
-// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
-// the 2nd parameter is an array of 'requires'
-angular.module('starter', ['ionic'])
+angular.module('wander', ['ionic'])
+
+.controller('FeatureCtrl', function($scope) {
+  $scope.features = [
+    {
+      "id": 1,
+      "name": "Waves",
+      "image": "img/thumb-surf.png"
+    },
+    {
+      "id": 2,
+      "name": "Deserts",
+      "image": "img/thumb-desert.png"
+    },
+    {
+      "id": 3,
+      "name": "Adventure",
+      "image": "img/thumb-touring.png"
+    },
+    {
+      "id": 4,
+      "name": "Relaxation",
+      "image": "img/thumb-canal.png"
+    },
+    {
+      "id": 5,
+      "name": "Waves",
+      "image": "img/thumb-surf.png"
+    },
+    {
+      "id": 6,
+      "name": "Deserts",
+      "image": "img/thumb-desert.png"
+    },
+    {
+      "id": 6,
+      "name": "Deserts",
+      "image": "img/thumb-desert.png"
+    },
+    {
+      "id": 6,
+      "name": "Deserts",
+      "image": "img/thumb-desert.png"
+    }
+  ];
+
+  $scope.toggleSelected = function() {
+    this.isSelected = !this.isSelected;
+  }
+})
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
