@@ -3,19 +3,7 @@
 wanderApp = angular.module('wander', ['ionic']);
 
 wanderApp.controller('FeatureListCtrl', ['$scope', '$rootScope', '$filter', '$state', function($scope, $rootScope, $filter, $state) {
-  $scope.features = [
-    { "id": 1, "name": "Waves", "image": "img/thumb-surf.png" },
-    { "id": 2, "name": "Deserts", "image": "img/thumb-desert.png" },
-    { "id": 3, "name": "Adventure", "image": "img/thumb-touring.png" },
-    { "id": 4, "name": "Relaxation", "image": "img/thumb-canal.png" },
-    { "id": 5, "name": "Waves", "image": "img/thumb-surf.png" },
-    { "id": 6, "name": "Deserts", "image": "img/thumb-desert.png" },
-    { "id": 6, "name": "Deserts", "image": "img/thumb-desert.png" },
-    { "id": 6, "name": "Deserts", "image": "img/thumb-desert.png" },
-    { "id": 6, "name": "Deserts", "image": "img/thumb-desert.png" },
-    { "id": 6, "name": "Deserts", "image": "img/thumb-desert.png" }
-  ];
-
+  $scope.features = answersObject;
   $scope.minToSelect = 3;
 
   $scope.minSelected = function() {

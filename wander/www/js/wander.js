@@ -2,52 +2,52 @@ var wander = {
 	answers: {
 		"Surfing": {
 			"name": "Surfing",
-			"image": "img/attributes/thumb-surf.png",
+			"image": "img/attributes/thumb-surf.jpg",
 			"tags": ['warm climate', 'beaches', 'physical activity', 'natural landscapes']
 		},
 		"Deserts": {
 			"name": "Deserts",
-			"image": "img/attributes/thumb-desert.png",
+			"image": "img/attributes/thumb-desert.jpg",
 			"tags": ['warm climate', 'desert', 'natural landscapes']
 		},
 		"Snow": {
 			"name": "Snow",
-			"image": "",
+			"image": "img/attributes/thumb-snow.jpg",
 			"tags": ['cold climate', 'snow', 'natural landscapes']
 		},
 		"Urban Views": {
 			"name": "Urban Views",
-			"image": "",
+			"image": "img/attributes/thumb-urban.jpg",
 			"tags": ['urban atmosphere', 'architecture']
 		},
 		"Soft Beaches": {
 			"name": "Soft Beaches",
-			"image": "",
+			"image": "img/attributes/thumb-beach.jpg",
 			"tags": ['beaches', 'warm climate']
 		},
 		"Hiking": {
 			"name": "Hiking",
-			"image": "",
+			"image": "img/attributes/thumb-hiking.jpg",
 			"tags": ['physical activity', 'mountains', 'natural landscapes']
 		},
 		"Street Food": {
 			"name": "Street Food",
-			"image": "",
+			"image": "img/attributes/thumb-streetfood.jpg",
 			"tags": ['cuisine', 'unique culture']
 		},
 		"Fine Dining": {
-			"name": "Street Food",
-			"image": "",
+			"name": "Fine Dining",
+			"image": "img/attributes/thumb-finedining.jpg",
 			"tags": ['cuisine', 'sophistication']
 		},
 		"Local Music": {
 			"name": "Local Music",
-			"image": "",
+			"image": "img/attributes/thumb-music.jpg",
 			"tags": ['arts', 'unique culture', 'nightlife']
 		},
 		"Malls": {
 			"name": "Malls",
-			"image": "",
+			"image": "img/attributes/thumb-snow.jpg",
 			"tags": ['urban atmosphere', 'shopping', 'sophistication']
 		},
 		"Historical Monuments": {
@@ -105,6 +105,13 @@ var wander = {
 };
 
 answers = wander.answers;
+answersObject = function()	{
+	var a = [];
+	Object.keys(answers).forEach(function(key) {
+		a.push(answers[key]);
+	});
+	return a;
+}();
 destinations = wander.destinations;
 
 function getResults(list) {
