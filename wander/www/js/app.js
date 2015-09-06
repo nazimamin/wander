@@ -2,7 +2,7 @@
 
 wanderApp = angular.module('wander', ['ionic']);
 
-wanderApp.controller('FeatureListCtrl', ['$scope', '$filter', '$state', function($scope, $filter, $state) {
+wanderApp.controller('FeatureListCtrl', ['$scope', '$rootScope', '$filter', '$state', function($scope, $rootScope, $filter, $state) {
   $scope.features = [
     { "id": 1, "name": "Waves", "image": "img/thumb-surf.png" },
     { "id": 2, "name": "Deserts", "image": "img/thumb-desert.png" },
@@ -37,11 +37,15 @@ wanderApp.controller('FeatureListCtrl', ['$scope', '$filter', '$state', function
       keywords.push(selectedFeatures[index]['name']);
     };
     // update user's selected features
-    // results = getMemes(keywords);
+    $rootScope.results = getResults(keywords);
     // .then/.success/.catch navigate programmatically to next view
     // $location.path("/suggestions");
     $state.go('results');
   }
+}]);
+
+wanderApp.controller('ResultsCtrl', ['$scope', '$rootScope', function($scope, $rootScope) {
+  $scope.results = $rootScope.results;
 }]);
 
 wanderApp.config(function($stateProvider, $urlRouterProvider) {
@@ -49,9 +53,11 @@ wanderApp.config(function($stateProvider, $urlRouterProvider) {
 
   $stateProvider.state('index', {
     url: '/',
+    controller: 'FeatureListCtrl',
     templateUrl: '../feature-list.html'
   }).state('results', {
     url: '/results',
+    controller: 'ResultsCtrl',
     templateUrl: '../results.html'
   })
 });

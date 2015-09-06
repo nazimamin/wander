@@ -1,0 +1,22 @@
+<ion-pane>
+  <ion-header-bar class="bar-stable">
+    <h1 class="title">Wander</h1>
+  </ion-header-bar>
+  <ion-content>
+    <ul class="feature-grid">
+      <li class="feature" ng-repeat="feature in features" ng-class="{'selected': feature.isSelected}" style="background-image: url('{{feature.image}}');">
+        <a class="feature--toggle-select" ng-click="toggleSelected(feature)"></a>
+        <h2 class="feature--name">{{feature.name}}</h2>
+        <div class="feature--selected"><i class="ion-ios-checkmark-outline"></i></div>
+      </li>
+    </ul>
+  </ion-content>
+  <ion-footer-bar class="bar-dark" ng-hide="minSelected()">
+    <div>
+      <h1 class="title">Please select {{minToSelect - getSelectedFeatures().length}} more to continue</h1>
+    </div>
+  </ion-footer-bar>
+  <ion-footer-bar class="bar-balanced" ng-show="minSelected()">
+    <h1 class="title" ng-click="continue()">Continue</h1>
+  </ion-footer-bar>
+</ion-pane>
