@@ -6,9 +6,9 @@
         <ul class="list">
           <li class="item item-thumbnail-left" href="#" ng-repeat="result in results">
               <a class="result--link" ng-click="book(result)">
-                <img src="cover.jpg">
+                <img src="{{result[1]}}">
                 <h2>{{result[0]}}</h2>
-                <p><strong>What you'd like:</strong><!-- weak --> {{result[1]}}</p>
+                <p><strong>What you'd like:</strong><!-- weak --> <span ng-repeat="keyword in result[2]">{{keyword}}<span ng-hide="$last">, </span></span></p>
               </a>
           </li>
         </ul>
