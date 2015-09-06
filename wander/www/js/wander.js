@@ -110,37 +110,41 @@ destinations = wander.destinations;
 function getResults(list) {
 	results = {};
 	resultsArray = [];
-	for (i in list) { // list[i] =
-		for (z in answers[list[i]]['tags']) { // list[i]['tags'][z] = tag value
-			for (j in destinations) { // destinations[j] = 'Destination City'
-				for (k in destinations[j]) { // destinations[j][k] = 'tag value'
-					if (answers[list[i]]['tags'][z].indexOf(destinations[j][k]) > -1) {
-						if (typeof results[j] === "undefined") {
-							results[j] = [];
+	try {
+		for (i in list) { // list[i] =
+			for (z in answers[list[i]]['tags']) { // list[i]['tags'][z] = tag value
+				for (j in destinations) { // destinations[j] = 'Destination City'
+					for (k in destinations[j]) { // destinations[j][k] = 'tag value'
+						if (answers[list[i]]['tags'][z].indexOf(destinations[j][k]) > -1) {
+							if (typeof results[j] === "undefined") {
+								results[j] = [];
+							}
+							results[j].push(destinations[j][k]);
 						}
-						results[j].push(destinations[j][k]);
 					}
 				}
 			}
 		}
-	}
-	//return results;
-	rCount = {};
-	Object.keys(results).forEach(function(key) {
-		rCount[key] = [];
-		rCount[key] = results[key].length
-	})
-	sorted = [];
-	sortedNew = [];
-	for (i in rCount)
-		sorted.push([i, rCount[i]])
-	sorted.sort(function(a, b) {
-		return a[1] - b[1]
-	})
-	for (i in sorted) {
-		sortedNew.push(sorted[i][0])
-	}
-	return {
-		results, sortedNew
+		//return results;
+		rCount = {};
+		Object.keys(results).forEach(function(key) {
+			rCount[key] = [];
+			rCount[key] = results[key].length
+		})
+		sorted = [];
+		sortedNew = [];
+		for (i in rCount)
+			sorted.push([i, rCount[i]])
+		sorted.sort(function(a, b) {
+			return a[1] - b[1]
+		})
+		for (i in sorted) {
+			sortedNew.push(sorted[i][0])
+		}
+		return {
+			results, sortedNew
+		}
+	} catch (e) {
+		return "You fucked up."
 	}
 }
