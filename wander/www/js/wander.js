@@ -3,20 +3,12 @@ var wander = {
 		"Waves": {
 			"name": "Waves",
 			"image": "img/thumb-surf.png",
-<<<<<<< Updated upstream
-			"tags": ['surfing', 'warm climate','beaches','physical activity']
-=======
 			"tags": ['warm climate', 'beaches', 'natural landscapes']
->>>>>>> Stashed changes
 		},
 		"Deserts": {
 			"name": "Deserts",
 			"image": "img/thumb-desert.png",
-<<<<<<< Updated upstream
-			"tags": ['warm climate','desert','nature']
-=======
 			"tags": ['warm climate', 'desert', 'natural landscapes']
->>>>>>> Stashed changes
 		},
 		"Snow": {
 			"name": "Snow",
