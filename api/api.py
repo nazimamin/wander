@@ -48,26 +48,30 @@ class GetTripResponse(Resource):
                 response = requests.get(url, params=parameters)
                 data = response.json()
                 response_data['uber'] = data
+                print(response_data['uber'])
                 #print(data);
             else:
                 #do flights
-                base_url = "http://www.hitlistapp.com/flights/cheap-flights-from-"
-                split_dest_name = str(dest_city_name).lower().split(",")
-                url = (base_url+'philadelphia-PHL'+'-to-'+split_dest_name[0].replace(' ', '-')+'-'+split_dest_name[1]+'/')
-                print(url);
+                ###
+                #base_url = "http://www.hitlistapp.com/flights/cheap-flights-from-"
+                #split_dest_name = str(dest_city_name).lower().split(",")
+                #url = (base_url+'philadelphia-PHL'+'-to-'+split_dest_name[0].replace(' ', '-')+'-'+split_dest_name[1]+'/')
+                #print(url);
                 
-                hdr = {'User-Agent': 'Mozilla/5.0'}
-                req = urllib2.Request(url,headers=hdr)
-                page = urllib2.urlopen(req)
+                #hdr = {'User-Agent': 'Mozilla/5.0'}
+                #req = urllib2.Request(url,headers=hdr)
+                #page = urllib2.urlopen(req)
                 #soup = BeautifulSoup(urllib2.urlopen(url).read(), 'lxml')
-                soup = BeautifulSoup(page, 'lxml')
-                if(soup):
-                    for div in soup.select('div#flightslist'):
-                        for href in div.find('a'):
-                            response_data['flight'] = [href]
-                main_response.append(response_data)
-                print(main_response)
-                return main_response
+                #soup = BeautifulSoup(page, 'lxml')
+                #if(soup):
+                 #   for div in soup.select('div#flightslist'):
+                  #      for href in div.find('a'):
+                   #         response_data['flight'] = [href]
+               # param_start, param_end
+                cities = { "Paris,France": "629",  "Agra,India": "1415", "Rome,Italy": "661", "Karachi,Pakistan": "1349", "Bangkok,Thailand": "958", "Catalonia,Spain": "634", "Guangzhou,China": "829", "Lagos,Nigeria": "849",  "Tokyo,Japan": "829", "Mumbai,India": "940", "Instanbul,Turkey": "876", "Dhaka,Bangladesh" : "1137", "Lahore,Pakistan": "1089", "Lima,Peru": "653", "MexicoCity,Mexico": "322"}
+
+                for city in cities:
+                    print(city)
         else:
              return make_response(jsonify( { 'error': 'error' } ), 400)
             
