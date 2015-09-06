@@ -7,6 +7,7 @@
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center center;
+        list-style: none;
 
         &.selected {
             .feature--name { display: none; }
@@ -27,5 +28,11 @@
         color: white;
         font-size: 5em;
         text-align: center;
+    }
+
+    .feature--toggle-select {
+        position: absolute;
+        top: 0; bottom: 0;
+        left: 0; right: 0;
     }
 }

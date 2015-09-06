@@ -7707,7 +7707,8 @@ a.button {
   float: left;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center center; }
+  background-position: center center;
+  list-style: none; }
   .feature-grid .feature.selected .feature--name {
     display: none; }
   .feature-grid .feature.selected .feature--selected {
@@ -7723,3 +7724,9 @@ a.button {
   color: white;
   font-size: 5em;
   text-align: center; }
+.feature-grid .feature--toggle-select {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; }
