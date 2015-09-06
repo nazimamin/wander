@@ -31,8 +31,13 @@ wanderApp.controller('FeatureListCtrl', ['$scope', '$filter', function($scope, $
   }
 
   $scope.continue = function() {
+    var keywords = [],
+        selectedFeatures = $scope.getSelectedFeatures();
+    for (index in selectedFeatures) {
+      keywords.push(selectedFeatures[index]['name']);
+    };
     // update user's selected features
-    // results = getMemes($scope.getSelectedFeatures());
+    // results = getMemes(keywords);
     // .then/.success/.catch navigate programmatically to next view
   }
 }]);
