@@ -3,7 +3,19 @@
         <h1 class="title">{{city}}</h1>
     </ion-header-bar>
     <ion-content>
-        <ui-gmap-google-map center="map.center" zoom="map.zoom">
-        </ui-gmap-google-map>
+        <ui-gmap-google-map center="map.center" zoom="map.zoom"></ui-gmap-google-map>
+        <ionic-datepicker input-obj="departureDatepicker">
+            <button class="button button-block button-positive">
+                <span ng-hide="departureIsSet()">Departing</span>
+                <span ng-show="departureIsSet()">{{departing | date:'MMMM d, yyyy'}}</span>
+            </button>
+        </ionic-datepicker>
+        <div class="date--to">to</div>
+        <ionic-datepicker input-obj="returnDatepicker">
+            <button class="button button-block button-positive">
+                <span ng-hide="returnIsSet()">Returning</span>
+                <span ng-show="returnIsSet()">{{returning | date:'MMMM d, yyyy'}}</span>
+            </button>
+        </ionic-datepicker>
     </ion-content>
 </ion-pane>

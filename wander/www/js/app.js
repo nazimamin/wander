@@ -1,6 +1,6 @@
 // Wander App
 
-wanderApp = angular.module('wander', ['ionic', 'uiGmapgoogle-maps']);
+wanderApp = angular.module('wander', ['ionic', 'uiGmapgoogle-maps', 'ionic-datepicker']);
 
 wanderApp.controller('FeatureListCtrl', ['$scope', '$rootScope', '$filter', '$state', function($scope, $rootScope, $filter, $state) {
   $scope.features = answersObject;
@@ -56,6 +56,55 @@ wanderApp.controller('BookingCtrl', ['$scope', '$rootScope', '$http', 'uiGmapGoo
     }, function(response) {
       alert("Could not geocode.");
     });
+
+    $scope.departureSet = false;
+    $scope.returnSet = false;
+
+    $scope.departureIsSet = function() {
+      return ($scope.departureSet) ? true : false;
+    }
+
+    $scope.returnIsSet = function() {
+      return ($scope.returnSet) ? true : false;
+    }
+
+    var departureDatepickerCallback = function (val) {
+      if (typeof(val) === 'undefined') {
+        console.log('No date selected');
+        $scope.departing = val;
+        $scope.departureSet = false;
+      } else {
+        console.log('Selected date is : ', val)
+        $scope.departing = val;
+        $scope.departureSet = true;
+      }
+    };
+
+    var returnDatepickerCallback = function (val) {
+      if (typeof(val) === 'undefined') {
+        console.log('No date selected');
+        $scope.returning = val;
+        $scope.returnSet = false;
+      } else {
+        console.log('Selected date is : ', val)
+        $scope.returning = val;
+        $scope.returnSet = true;
+      }
+    };
+
+    $scope.departureDatepicker = {
+      inputDate: new Date(),
+      callback: function (val) {
+        departureDatepickerCallback(val);
+      }
+    };
+
+    $scope.returnDatepicker = {
+      inputDate: new Date(),
+      callback: function (val) {
+        returnDatepickerCallback(val);
+      }
+    };
 }]);
 
 wanderApp.config(function($stateProvider, $urlRouterProvider, uiGmapGoogleMapApiProvider) {
