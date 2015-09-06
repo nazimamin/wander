@@ -50,10 +50,21 @@ $teal: #1CCEE4;
 $calm: $teal;
 $dark-grey: #4E4E4E;
 
-body    {
-    color: $dark-grey;
-}
-
 // Include application styles
 @import "www/lib/ionic/scss/ionic";
+
+body    {
+    color: $dark-grey;
+    font-size: 16px;
+}
+h1  {
+  font-size: 28px;
+}
+h2, .item h2  {
+  font-size: 24px;
+}
+
+h3  {
+  font-size: 18px;
+}
 @import "scss/view-specific";

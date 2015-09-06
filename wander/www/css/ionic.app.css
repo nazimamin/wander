@@ -29,9 +29,6 @@ $dark:                            #444 !default;
   font-weight: bold;
   font-style: normal; }
 
-body {
-  color: #4E4E4E; }
-
 /*!
   Ionicons, v2.0.1
   Created by Ben Sperry for the Ionic Framework, http://ionicons.com/
@@ -7717,6 +7714,19 @@ a.button {
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
 
+body {
+  color: #4E4E4E;
+  font-size: 16px; }
+
+h1 {
+  font-size: 28px; }
+
+h2, .item h2 {
+  font-size: 24px; }
+
+h3 {
+  font-size: 18px; }
+
 .feature-grid {
   flex-wrap: wrap;
   -webkit-flex-wrap: wrap; }
@@ -7750,7 +7760,8 @@ a.button {
     color: white;
     font-weight: bold;
     bottom: 0;
-    padding: 1rem; }
+    font-size: 14px;
+    padding: .5rem 1rem; }
   .feature-grid .feature--selected {
     position: absolute;
     top: 50%;
@@ -7774,6 +7785,14 @@ a.button {
   width: 100%;
   padding-top: 100%;
   background-size: cover !important; }
+
+.result p {
+  white-space: normal; }
+
+.transit-method {
+  display: block;
+  margin: auto;
+  text-align: center; }
 
 .date--to {
   text-align: center; }

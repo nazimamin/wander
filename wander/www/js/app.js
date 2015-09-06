@@ -59,6 +59,8 @@ wanderApp.controller('BookingCtrl', ['$scope', '$rootScope', '$http', 'uiGmapGoo
 
     $scope.departureSet = false;
     $scope.returnSet = false;
+    $scope.flightCost = 0;
+    $scope.showTransit = false;
 
     $scope.departureIsSet = function() {
       return ($scope.departureSet) ? true : false;
@@ -88,7 +90,9 @@ wanderApp.controller('BookingCtrl', ['$scope', '$rootScope', '$http', 'uiGmapGoo
       } else {
         console.log('Selected date is : ', val)
         $scope.returning = val;
+        $scope.showTransit = true;
         $scope.returnSet = true;
+        $scope.flightCost = getFlight($scope.city);
       }
     };
 

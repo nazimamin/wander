@@ -248,3 +248,40 @@ function getResults(list) {
 	return "You fucked up."
 		//}
 }
+
+function getFlight(cityname) {
+    var modified = cityname.replace(' ', '');
+    var cities = {
+        "Paris,France": "629",
+        "Agra,India": "1415",
+        "Rome,Italy": "661",
+        "Karachi,Pakistan": "1349",
+        "Bangkok,Thailand": "958",
+        "Catalonia,Spain": "634",
+        "Guangzhou,China": "829",
+        "Lagos,Nigeria": "849",
+        "Tokyo,Japan": "829",
+        "Mumbai,India": "940",
+        "Instanbul,Turkey": "876",
+        "Dhaka,Bangladesh": "1137",
+        "Lahore,Pakistan": "1089",
+        "Lima,Peru": "653",
+        "MexicoCity,Mexico": "322",
+        "Kinshasa,DemocraticRepublicoftheCongo": "1456",
+        "Jakarta,Indonesia": "946",
+        "SaoPaulo,Brazil": "955",
+        "Seoul,SouthKorea": "879",
+        "Shenzhen,China": "1048",
+        "London,UnitedKingdom": "664",
+        "Cairo,Egypt": "809",
+        "Moscow,Russia": "608",
+        "Beijing,China": "807",
+        "Bangalore,India": "928",
+        "Hanoi,Vietnam": "1304",
+        "Penang,Malaysia": "1410",
+        "Singapore,Singapore": "958",
+        "Amsterdam,Netherlands": "752",
+        "NewYorkCity,UnitedStates": "205"
+    };
+    return '$' + cities[modified];
+}

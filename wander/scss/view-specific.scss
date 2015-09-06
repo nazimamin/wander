@@ -49,7 +49,8 @@
         color: white;
         font-weight: bold;
         bottom: 0;
-        padding: 1rem;
+        font-size: 14px;
+        padding: .5rem 1rem;
     }
 
     .feature--selected {
@@ -77,6 +78,15 @@
     width: 100%;
     padding-top: 100%;
     background-size: cover !important;
+}
+.result p   {
+    white-space: normal;
+}
+
+.transit-method {
+    display: block;
+    margin: auto;
+    text-align: center;
 }
 
 .date--to { text-align: center; }
