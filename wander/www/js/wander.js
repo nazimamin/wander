@@ -1,13 +1,13 @@
 var wander = {
 	answers: {
-		"Waves": {
-			"name": "Waves",
-			"image": "img/thumb-surf.png",
-			"tags": ['warm climate', 'beaches', 'natural landscapes']
+		"Surfing": {
+			"name": "Surfing",
+			"image": "img/attributes/thumb-surf.png",
+			"tags": ['warm climate', 'beaches', 'physical activity', 'natural landscapes']
 		},
 		"Deserts": {
 			"name": "Deserts",
-			"image": "img/thumb-desert.png",
+			"image": "img/attributes/thumb-desert.png",
 			"tags": ['warm climate', 'desert', 'natural landscapes']
 		},
 		"Snow": {
@@ -28,12 +28,17 @@ var wander = {
 		"Hiking": {
 			"name": "Hiking",
 			"image": "",
-			"tags": ['physical activity', 'natural landscapes']
+			"tags": ['physical activity', 'mountains', 'natural landscapes']
 		},
 		"Street Food": {
 			"name": "Street Food",
 			"image": "",
 			"tags": ['cuisine', 'unique culture']
+		},
+		"Fine Dining": {
+			"name": "Street Food",
+			"image": "",
+			"tags": ['cuisine', 'sophistication']
 		},
 		"Local Music": {
 			"name": "Local Music",
@@ -43,8 +48,23 @@ var wander = {
 		"Malls": {
 			"name": "Malls",
 			"image": "",
-			"tags": ['urban atmosphere', 'shopping']
+			"tags": ['urban atmosphere', 'shopping', 'sophistication']
 		},
+		"Historical Monuments": {
+			"name": "Historical Monuments",
+			"image": "",
+			"tags": ['unique culture', 'architecture']
+		},
+		"Sunny Weather": {
+			"name": "Sunny Weather",
+			"image": "",
+			"tags": ['warm climate', 'sunshine']
+		},
+		"Quaint Coffee Shops": {
+			"name": "Quaint Coffee Shops",
+			"image": "",
+			"tags": ['cuisine', 'urban atmosphere', 'unique culture']
+		}
 	},
 	destinations: {
 		'Paris, France': ['architecture', 'museum', 'unique cuisine'],
