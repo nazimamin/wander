@@ -1,38 +1,63 @@
+@mixin relative-center  {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@mixin rounded-corners  {
+    border-radius: .0625rem;
+}
+
 .feature-grid {
+    flex-wrap: wrap;
     .feature {
+        @include rounded-corners;
         position: relative;
-        width: 50%;
-        height: 171px;
-        float: left;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center center;
+        padding-top: (2 / 3) * 100%;
+        width: 100%;
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+        background-position: center center !important;
         list-style: none;
 
         &.selected {
-            .feature--name { display: none; }
-            .feature--selected { display: block; }
+            .feature--selected {
+                transform: translate(-50%, -50%) scale(1);
+            }
         }
     }
-
+    .feature--overlay   {
+        opacity: 0;
+        transition: all 200ms ease;
+        -webkit-transition: all 200ms ease;
+    }
+    .feature.selected .feature--overlay   {
+        opacity: 1;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba($teal, .5);
+    }
     .feature--name {
-        margin-top: 70px;
+        position: absolute;
         color: white;
-        font-size: 1.3em;
-        text-align: center;
+        font-weight: bold;
+        bottom: 0;
+        padding: 1rem;
     }
 
     .feature--selected {
-        display: none;
-        margin-top: 0.73em;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0);
         color: white;
         font-size: 5em;
         text-align: center;
+        transition: all 100ms ease;
+        -webkit-transition: all 100ms ease;
     }
 
-    .feature--toggle-select {
-        position: absolute;
-        top: 0; bottom: 0;
-        left: 0; right: 0;
-    }
 }

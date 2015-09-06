@@ -19,7 +19,41 @@ $dark:                            #444 !default;
 $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 // Include all of Ionic
-@import "www/lib/ionic/scss/ionic";
+
+@font-face  {
+  font-family: 'proxima-nova';
+  src: url($ionicons-font-path + '/mark_simonson_-_proxima_nova_regular-webfont.eot');
+  src: url($ionicons-font-path + '/mark_simonson_-_proxima_nova_regular-webfont.eot?#iefix') format('embedded-opentype'),
+       url($ionicons-font-path + '/mark_simonson_-_proxima_nova_regular-webfont.woff') format('woff'),
+       url($ionicons-font-path + '/mark_simonson_-_proxima_nova_regular-webfont.ttf') format('truetype'),
+       url($ionicons-font-path + '/mark_simonson_-_proxima_nova_regular-webfont.svg#camptonbold_demo') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face  {
+  font-family: 'proxima-nova';
+  src: url($ionicons-font-path + '/mark_simonson_-_proxima_nova_bold-webfont.eot');
+  src: url($ionicons-font-path + '/mark_simonson_-_proxima_nova_bold-webfont.eot?#iefix') format('embedded-opentype'),
+       url($ionicons-font-path + '/mark_simonson_-_proxima_nova_bold-webfont.woff2') format('woff2'),
+       url($ionicons-font-path + '/mark_simonson_-_proxima_nova_bold-webfont.woff') format('woff'),
+       url($ionicons-font-path + '/mark_simonson_-_proxima_nova_bold-webfont.ttf') format('truetype'),
+       url($ionicons-font-path + '/mark_simonson_-_proxima_nova_bold-webfont.svg#camptonbold_demo') format('svg');
+  font-weight: bold;
+  font-style: normal;
+}
+
+$font-family-sans-serif: 'proxima-nova', Avenir, sans-serif;
+$font-family-light-sans-serif: $font-family-sans-serif;
+
+//colors
+$teal: #1CCEE4;
+$calm: $teal;
+$dark-grey: #4E4E4E;
+
+body    {
+    color: $dark-grey;
+}
 
 // Include application styles
+@import "www/lib/ionic/scss/ionic";
 @import "scss/view-specific";
