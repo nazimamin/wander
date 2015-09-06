@@ -1,17 +1,3 @@
-function GET(url, callback, type) {
-    var xhr = new XMLHttpRequest();
-    if (type) {
-        xhr.responseType = type;
-    }
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState == 4 && xhr.status == 200) {
-            callback(xhr);
-        }
-    }
-    xhr.open("GET", url, true);
-    xhr.send();
-}
-
 var wander = {
 	answers: {
 		"Surfing": {
@@ -87,138 +73,131 @@ var wander = {
 	},
 	destinations: {
 		'Paris, France': {
-			"image": "sample.jpg",
+			"image": "img/cities/paris.jpg",
 			"tags": ['architecture', 'museum', 'unique cuisine']
 		},
 		'Agra, India': {
-			"image": "sample.jpg",
+			"image": "img/cities/agra.jpg",
 			"tags": ['architecture', 'unique cuisine']
 		},
 		'Rome, Italy': {
-			"image": "sample.jpg",
+			"image": "img/cities/rome.jpg",
 			"tags": ['architecture', 'mediterranean']
 		},
 		'Karachi, Pakistan': {
-			"image": "sample.jpg",
+			"image": "img/cities/karachi.jpg",
 			"tags": ['architecture', 'mediterranean']
 		},
 		'Rome, Italy': {
-			"image": "sample.jpg",
+			"image": "img/cities/rome.jpg",
 			"tags": ['architecture', 'mediterranean']
 		},
 		'Bangkok, Thailand': {
-			"image": "sample.jpg",
+			"image": "img/cities/bangkok.jpg",
 			"tags": ['beaches']
 		},
 		'Catalonia, Spain': {
-			"image": "sample.jpg",
+			"image": "img/cities/catalonia.jpg",
 			"tags": ['beaches']
 		},
 		'Guangzhou, China': {
-			"image": "sample.jpg",
+			"image": "img/cities/guangzhou.jpg",
 			"tags": ['beaches']
 		},
 		'Lagos, Nigeria': {
-			"image": "sample.jpg",
+			"image": "img/cities/lagos.jpg",
 			"tags": ['beaches']
 		},
 		'Tokyo, Japan': {
-			"image": "sample.jpg",
+			"image": "img/cities/tokyo.jpg",
 			"tags": ['beaches']
 		},
 		'Shanghai, China': {
-			"image": "sample.jpg",
+			"image": "img/cities/shanghai.jpg",
 			"tags": ['beaches']
 		},
 		'Mumbai, India': {
-			"image": "sample.jpg",
+			"image": "img/cities/mumbai.jpg",
 			"tags": ['beaches', 'fresh memes']
 		},
-		'Instanbul, Turkey': {
-			"image": "sample.jpg",
+		'Istanbul, Turkey': {
+			"image": "img/cities/istanbul.jpg",
 			"tags": ['beaches', 'fresh memes']
 		},
 		'Dhaka, Bangladesh': {
-			"image": "sample.jpg",
+			"image": "img/cities/dhaka.jpg",
 			"tags": ['beaches', 'fresh memes']
 		},
 		'Lahore, Pakistan': {
+			"image": "img/cities/lahore.jpg",
 			"tags": ['beaches', 'fresh memes']
 		},
 		'Lima, Peru': {
-			"image": "sample.jpg",
+			"image": "img/cities/lima.jpg",
 			"tags": ['beaches', 'fresh memes']
 		},
 		'Mexico City, Mexico': {
-			"image": "sample.jpg",
+			"image": "img/cities/mexicocity.jpg",
 			"tags": ['beaches', 'fresh memes']
 		},
 		'Kinshasa, Democratic Republic of the Congo': {
-			"image": "sample.jpg",
+			"image": "img/cities/kinshasa.jpg",
 			"tags": ['beaches', 'fresh memes']
 		},
 		'Jakarta, Indonesia': {
-			"image": "sample.jpg",
+			"image": "img/cities/jakarta.jpg",
 			"tags": ['beaches', 'fresh memes']
 		},
 		'Sao Paulo, Brazil': {
-			"image": "sample.jpg",
-			"tags": ['beaches', 'fresh memes']
-		},
-		'Dongguan, China': {
-			"image": "sample.jpg",
+			"image": "img/cities/saopaulo.jpg",
 			"tags": ['beaches', 'fresh memes']
 		},
 		'Seoul, South Korea': {
-			"image": "sample.jpg",
+			"image": "img/cities/seoul.jpg",
 			"tags": ['beaches', 'fresh memes']
 		},
 		'Shenzhen, China': {
-			"image": "sample.jpg",
+			"image": "img/cities/shenzhen.jpg",
 			"tags": ['beaches', 'fresh memes']
 		},
 		'London, United Kingdom': {
-			"image": "sample.jpg",
+			"image": "img/cities/london.jpg",
 			"tags": ['beaches', 'fresh memes']
 		},
 		'Cairo, Egypt': {
-			"image": "sample.jpg",
+			"image": "img/cities/cairo.jpg",
 			"tags": ['beaches', 'fresh memes']
 		},
 		'Moscow, Russia': {
-			"image": "sample.jpg",
+			"image": "img/cities/moscow.jpg",
 			"tags": ['beaches', 'fresh memes']
 		},
 		'Beijing, China': {
-			"image": "sample.jpg",
+			"image": "img/cities/beijing.jpg",
 			"tags": ['beaches', 'fresh memes']
 		},
-		'The Caribbean': {
-			"image": "sample.jpg",
-			"tags": ['beaches', 'fresh memes']
-		},
-		'Bengaluru, India': {
-			"image": "sample.jpg",
+		'Bangalore, India': {
+			"image": "img/cities/bangalore.jpg",
 			"tags": ['beaches']
 		},
 		'Hanoi, Vietnam': {
-			"image": "sample.jpg",
+			"image": "img/cities/hanoi.jpg",
 			"tags": ['beaches']
 		},
 		'Penang, Malaysia': {
-			"image": "sample.jpg",
+			"image": "img/cities/penang.jpg",
 			"tags": ['cuisine']
 		},
-		'Singapore': {
-			"image": "sample.jpg",
+		'Singapore, Singapore': {
+			"image": "img/cities/singapore.jpg",
 			"tags": ['beaches']
 		},
-		'Amsterdam, the Netherlands': {
-			"image": "sample.jpg",
+		'Amsterdam, Netherlands': {
+			"image": "img/cities/amsterdam.jpg",
 			"tags": ['recreation', 'nightlife']
 		},
 		'New York City, United States': {
-			"image": "sample.jpg",
+			"image": "img/cities/newyork.jpg",
 			"tags": ['nightlife']
 		}
 	}
