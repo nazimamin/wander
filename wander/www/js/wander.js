@@ -3,33 +3,56 @@ var wander = {
 		"Waves": {
 			"name": "Waves",
 			"image": "img/thumb-surf.png",
+<<<<<<< Updated upstream
 			"tags": ['surfing', 'warm climate','beaches','physical activity']
+=======
+			"tags": ['warm climate', 'beaches', 'natural landscapes']
+>>>>>>> Stashed changes
 		},
 		"Deserts": {
 			"name": "Deserts",
 			"image": "img/thumb-desert.png",
+<<<<<<< Updated upstream
 			"tags": ['warm climate','desert','nature']
+=======
+			"tags": ['warm climate', 'desert', 'natural landscapes']
+>>>>>>> Stashed changes
 		},
 		"Snow": {
 			"name": "Snow",
 			"image": "",
-			"tags": ['none']
+			"tags": ['cold climate', 'snow', 'natural landscapes']
 		},
-		"Unconventional": {
-			"name": "Unconventional",
+		"Urban Views": {
+			"name": "Urban Views",
 			"image": "",
-			"tags": ['none']
+			"tags": ['urban atmosphere', 'architecture']
 		},
-		"Beaches": {
-			"name": "Beaches",
-			"image": "",
-			"tags": ['beaches', 'warm climate']
-		},
-		"Adventure": {
-			"name": "Adventure",
+		"Soft Beaches": {
+			"name": "Soft Beaches",
 			"image": "",
 			"tags": ['beaches', 'warm climate']
-		}
+		},
+		"Hiking": {
+			"name": "Hiking",
+			"image": "",
+			"tags": ['physical activity', 'natural landscapes']
+		},
+		"Street Food": {
+			"name": "Street Food",
+			"image": "",
+			"tags": ['cuisine', 'unique culture']
+		},
+		"Local Music": {
+			"name": "Local Music",
+			"image": "",
+			"tags": ['arts', 'unique culture', 'nightlife']
+		},
+		"Malls": {
+			"name": "Malls",
+			"image": "",
+			"tags": ['urban atmosphere', 'shopping']
+		},
 	},
 	destinations: {
 		'Paris, France': ['architecture', 'museum', 'unique cuisine'],
@@ -75,7 +98,7 @@ destinations = wander.destinations;
 function getResults(list) {
 	results = {};
 	resultsArray = [];
-	for (i in list) { // list[i] = 
+	for (i in list) { // list[i] =
 		for (z in answers[list[i]]['tags']) { // list[i]['tags'][z] = tag value
 			for (j in destinations) { // destinations[j] = 'Destination City'
 				for (k in destinations[j]) { // destinations[j][k] = 'tag value'
