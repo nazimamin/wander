@@ -6,34 +6,38 @@
         <ui-gmap-google-map center="map.center" zoom="map.zoom"></ui-gmap-google-map>
         <div ng-show="!showTransit">
             <ionic-datepicker input-obj="departureDatepicker">
-                <button class="button button-block button-positive">
+                <button class="button button-datepicker button-block button-balanced">
                     <span ng-hide="departureIsSet()">Departing</span>
-                    <span ng-show="departureIsSet()">{{departing | date:'MMMM d, yyyy'}}</span>
+                    <span ng-show="departureIsSet()">Departing: {{departing | date:'MMMM d, yyyy'}}</span>
                 </button>
             </ionic-datepicker>
             <div class="date--to">to</div>
             <ionic-datepicker input-obj="returnDatepicker">
-                <button class="button button-block button-positive">
+                <button class="button button-datepicker button-block button-positive">
                     <span ng-hide="returnIsSet()">Returning</span>
-                    <span ng-show="returnIsSet()">{{returning | date:'MMMM d, yyyy'}}</span>
+                    <span ng-show="returnIsSet()">Returning: {{returning | date:'MMMM d, yyyy'}}</span>
                 </button>
             </ionic-datepicker>
         </div>
         <div ng-show="showTransit">
-            <div class="row">
-                <h2>Getting There</h2>
+            <div class="bar">
+                <h1 class="title">Getting There</h1>
             </div>
-            <div class="row">
+            <div class="row row--meta-info">
                 <div class="col col-50">
                     <div class="card padding transit-method">
-                        <img src="img/airplane.svg" alt="">
+                        <div class="card--icon">
+                            <img src="img/airplane.svg" alt="">
+                        </div>
                         <h3>{{flightCost}}</h3>
                         <p>non-stop</p>
                     </div>
                 </div>
                 <div class="col col-50">
                     <div class="card padding transit-method">
-                        <img src="img/car.svg" alt="">
+                        <div class="card--icon">
+                            <img src="img/car.svg" alt="">
+                        </div>
                         <h3>$15</h3>
                         <p>UberX to the airport</p>
                     </div>

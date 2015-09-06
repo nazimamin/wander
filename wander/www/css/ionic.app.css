@@ -7796,3 +7796,15 @@ h3 {
 
 .date--to {
   text-align: center; }
+
+.card--icon {
+  min-height: 60px; }
+
+.button.button-block.button-datepicker.button-balanced {
+  margin-top: 0; }
+
+.button.button-block.button-datepicker.button-positive {
+  margin-bottom: 0; }
+
+.row--meta-info {
+  padding-top: 49px; }
