@@ -47,23 +47,28 @@ var wander = {
 		},
 		"Malls": {
 			"name": "Malls",
-			"image": "img/attributes/thumb-snow.jpg",
+			"image": "img/attributes/thumb-malls.jpg",
 			"tags": ['urban atmosphere', 'shopping', 'sophistication']
 		},
 		"Historical Monuments": {
 			"name": "Historical Monuments",
-			"image": "",
+			"image": "img/attributes/thumb-monuments.jpg",
 			"tags": ['unique culture', 'architecture']
 		},
 		"Sunny Weather": {
 			"name": "Sunny Weather",
-			"image": "",
+			"image": "img/attributes/thumb-sunshine.jpg",
 			"tags": ['warm climate', 'sunshine']
 		},
 		"Quaint Coffee Shops": {
 			"name": "Quaint Coffee Shops",
-			"image": "",
+			"image": "img/attributes/thumb-coffee.jpg",
 			"tags": ['cuisine', 'urban atmosphere', 'unique culture']
+		},
+		"Art Museums": {
+			"name": "Art Museums",
+			"image": "img/attributes/thumb-arts.jpg",
+			"tags": ['unique culture', 'museums', 'arts', 'sophistication']
 		}
 	},
 	destinations: {
