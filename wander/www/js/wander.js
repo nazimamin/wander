@@ -1,59 +1,75 @@
-var idbAdapter = new lokiIndexedAdapter('loki');
-var db = new loki('wander', {
-	autoload: true,
-	autoloadCallback: loadHandler,
-	autosave: true,
-	autosaveInterval: 10000,
-	adapter: idbAdapter
-});
-
-function loadHandler() {
-	var questions = db.getCollection('wander');
-	if (questions === null) {
-		questions = db.addCollection('wander');
-	}
-}
-
-wander.insert({
+var wander = {
 	answers: {
-		[{
-			"id": 1,
+		"Waves": {
 			"name": "Waves",
-			"image": "img/thumb-surf.png"
+			"image": "img/thumb-surf.png",
 			"tags": ['surfing', 'warm climate']
-		}, {
-			"id": 2,
+		},
+		"Deserts": {
 			"name": "Deserts",
-			"image": "img/thumb-desert.png"
+			"image": "img/thumb-desert.png",
 			"tags": ['none']
-		}, {
-			"id": 3,
-			"name": "Adventure",
-			"image": "img/thumb-touring.png"
+		},
+		"Snow": {
+			"name": "Snow",
+			"image": "",
 			"tags": ['none']
-		}, {
-			"id": 4,
-			"name": "Relaxation",
-			"image": "img/thumb-canal.png"
+		},
+		"Unconventional": {
+			"name": "Unconventional",
+			"image": "",
 			"tags": ['none']
-		}, {
-			"id": 5,
+		},
+		"Beaches": {
 			"name": "Beaches",
-			"image": "img/thumb-surf.png"
+			"image": "",
 			"tags": ['beaches', 'warm climate']
-		}, {
-			"id": 6,
-			"name": "Deserts",
-			"image": "img/thumb-desert.png"
-			"tags": ['none']
-		}];
-
+		},
+		"Adventure": {
+			"name": "Adventure",
+			"image": "",
+			"tags": ['beaches', 'warm climate']
+		}
 	},
 	destinations: {
-		'Cancun': ['beaches'],
-		'Dankville': ['Weed']
+		'Paris, France': ['architecture', 'museum', 'unique cuisine'],
+		'Agra, India': ['architecture', 'unique cuisine'],
+		'Rome, Italy': ['architecture', 'mediterranean'],
+		'Bangkok, Thailand': ['beaches'],
+		'Catalonia, Spain': ['beaches'],
+		'Tokyo, Japan': ['beaches'],
+		'Hong Kong, China': ['beaches'],
+		'The Caribbean': ['beaches'],
+		'Peru': ['beaches'],
+		'Hanoi, Vietnam': ['beaches'],
+		'Penang, Malaysia': ['cuisine'],
+		'Singapore': ['beaches'],
+		'Amsterdam, the Netherlands': ['recreation', 'nightlife'],
+		'New York City, United States': ['nightlife']
 	}
-});
+};
 
-questionSet = db.collections[0].data[0].questions;
-dataSet = db.collections[0].data[0].destinations;
+answers = wander.answers;
+destinations = wander.destinations;
+
+function getResults(list) {
+	results = {};
+	results['pushes'] = 0;
+	for (i in list) { // list[i] = 
+		for (z in answers[list[i]]['tags']) { // list[i]['tags'][z] = tag value
+			for (j in destinations) { // destinations[j] = 'Destination City'
+				for (k in destinations[j]) { // destinations[j][k] = 'tag value'
+					if (answers[list[i]]['tags'][z].indexOf(destinations[j][k]) > -1) {
+						results[destinations[j]].push(destinations[j][k]);
+						results['pushes']++;
+						console.log(results)
+					}
+				}
+			}
+		}
+	}
+	console.log(results);
+	for (l in results) {
+		// Do Something;
+	}
+}
