@@ -73,145 +73,145 @@ var wander = {
 	},
 	destinations: {
 		'Paris, France': {
-			"image": "",
+			"image": "sample.jpg",
 			"tags": ['architecture', 'museum', 'unique cuisine']
 		},
 		'Agra, India': {
-			"image": "",
+			"image": "sample.jpg",
 			"tags": ['architecture', 'unique cuisine']
 		},
 		'Rome, Italy': {
-			"image": "",
+			"image": "sample.jpg",
 			"tags": ['architecture', 'mediterranean']
 		},
 		'Karachi, Pakistan': {
-			"image": "",
+			"image": "sample.jpg",
 			"tags": ['architecture', 'mediterranean']
 		},
 		'Rome, Italy': {
-			"image": "",
+			"image": "sample.jpg",
 			"tags": ['architecture', 'mediterranean']
 		},
 		'Bangkok, Thailand': {
-			"image": "",
+			"image": "sample.jpg",
 			"tags": ['beaches']
 		},
 		'Catalonia, Spain': {
-			"image": "",
+			"image": "sample.jpg",
 			"tags": ['beaches']
 		},
 		'Guangzhou, China': {
-			"image": "",
+			"image": "sample.jpg",
 			"tags": ['beaches']
 		},
 		'Lagos, Nigeria': {
-			"image": "",
+			"image": "sample.jpg",
 			"tags": ['beaches']
 		},
 		'Tokyo, Japan': {
-			"image": "",
+			"image": "sample.jpg",
 			"tags": ['beaches']
 		},
 		'Shanghai, China': {
-			"image": "",
+			"image": "sample.jpg",
 			"tags": ['beaches']
 		},
 		'Mumbai, India': {
-			"image": "",
-			"tags": ['beaches']
+			"image": "sample.jpg",
+			"tags": ['beaches', 'fresh memes']
 		},
 		'Instanbul, Turkey': {
-			"image": "",
-			"tags": ['beaches']
+			"image": "sample.jpg",
+			"tags": ['beaches', 'fresh memes']
 		},
 		'Dhaka, Bangladesh': {
-			"image": "",
-			"tags": ['beaches']
+			"image": "sample.jpg",
+			"tags": ['beaches', 'fresh memes']
 		},
 		'Lahore, Pakistan': {
-			"tags": ['beaches']
+			"tags": ['beaches', 'fresh memes']
 		},
 		'Lima, Peru': {
-			"image": "",
-			"tags": ['beaches']
+			"image": "sample.jpg",
+			"tags": ['beaches', 'fresh memes']
 		},
 		'Mexico City, Mexico': {
-			"image": "",
-			"tags": ['beaches']
+			"image": "sample.jpg",
+			"tags": ['beaches', 'fresh memes']
 		},
 		'Kinshasa, Democratic Republic of the Congo': {
-			"image": "",
-			"tags":  ['beaches']
+			"image": "sample.jpg",
+			"tags": ['beaches', 'fresh memes']
 		},
 		'Jakarta, Indonesia': {
-			"image": "",
-			"tags":  ['beaches']
+			"image": "sample.jpg",
+			"tags": ['beaches', 'fresh memes']
 		},
 		'Sao Paulo, Brazil': {
-			"image": "",
-			"tags":  ['beaches']
+			"image": "sample.jpg",
+			"tags": ['beaches', 'fresh memes']
 		},
 		'Dongguan, China': {
-			"image": "",
-			"tags":  ['beaches']
+			"image": "sample.jpg",
+			"tags": ['beaches', 'fresh memes']
 		},
 		'Seoul, South Korea': {
-			"image": "",
-			"tags":  ['beaches']
+			"image": "sample.jpg",
+			"tags": ['beaches', 'fresh memes']
 		},
 		'Shenzhen, China': {
-			"image": "",
-			"tags":  ['beaches']
+			"image": "sample.jpg",
+			"tags": ['beaches', 'fresh memes']
 		},
 		'London, United Kingdom': {
-			"image": "",
-			"tags":  ['beaches']
+			"image": "sample.jpg",
+			"tags": ['beaches', 'fresh memes']
 		},
 		'Cairo, Egypt': {
-			"image": "",
-			"tags":  ['beaches']
+			"image": "sample.jpg",
+			"tags": ['beaches', 'fresh memes']
 		},
 		'Moscow, Russia': {
-			"image": "",
-			"tags":  ['beaches']
+			"image": "sample.jpg",
+			"tags": ['beaches', 'fresh memes']
 		},
 		'Beijing, China': {
-			"image": "",
-			"tags":  ['beaches']
+			"image": "sample.jpg",
+			"tags": ['beaches', 'fresh memes']
 		},
 		'The Caribbean': {
-			"image": "",
-			"tags":  ['beaches']
+			"image": "sample.jpg",
+			"tags": ['beaches', 'fresh memes']
 		},
 		'Bengaluru, India': {
-			"image": "",
-			"tags":  ['beaches']
+			"image": "sample.jpg",
+			"tags": ['beaches']
 		},
 		'Hanoi, Vietnam': {
-			"image": "",
-			"tags":  ['beaches']
+			"image": "sample.jpg",
+			"tags": ['beaches']
 		},
 		'Penang, Malaysia': {
-			"image": "",
-			"tags":  ['cuisine']
+			"image": "sample.jpg",
+			"tags": ['cuisine']
 		},
 		'Singapore': {
-			"image": "",
-			"tags":  ['beaches']
+			"image": "sample.jpg",
+			"tags": ['beaches']
 		},
 		'Amsterdam, the Netherlands': {
-			"image": "",
-			"tags":  ['recreation', 'nightlife']
+			"image": "sample.jpg",
+			"tags": ['recreation', 'nightlife']
 		},
 		'New York City, United States': {
-			"image": "",
-			"tags":  ['nightlife']
+			"image": "sample.jpg",
+			"tags": ['nightlife']
 		}
 	}
 };
 
 answers = wander.answers;
-answersObject = function()	{
+answersObject = function() {
 	var a = [];
 	Object.keys(answers).forEach(function(key) {
 		a.push(answers[key]);
@@ -225,39 +225,37 @@ function getResults(list) {
 	results = {};
 	resultsArray = [];
 	//try {
-		for (i in list) { // list[i] =
-			for (z in answers[list[i]]['tags']) { // list[i]['tags'][z] = tag value
-				for (j in destinations) { // destinations[j] = 'Destination City'
-					for (k in destinations[j]) { // destinations[j][k] = 'tag value'
-						if (answers[list[i]]['tags'][z].indexOf(destinations[j][k]) > -1) {
-							if (typeof results[j] === "undefined") {
-								results[j] = [];
-							}
-							results[j].push(destinations[j][k]);
+	for (i in list) { // list[i] =
+		for (z in answers[list[i]]['tags']) { // list[i]['tags'][z] = tag value
+			for (j in destinations) { // destinations[j] = 'Destination City'
+				for (k in destinations[j]['tags']) { // destinations[j][k] = 'tag value'
+					if (answers[list[i]]['tags'][z].indexOf(destinations[j]['tags'][k]) > -1) {
+						if (typeof results[j] === "undefined") {
+							results[j] = [];
 						}
+						results[j].push(destinations[j]['image']);
+						results[j].push(destinations[j]['tags']);
 					}
 				}
 			}
 		}
-		//return results;
-		rCount = [];
-		for (v in results) {
-			rCount[v] = [];
-			rCount[v].push(results[v][0]);
-			rCount[v].push(results[v].length);
-		}
-		sorted = [];
-		sortedNew = [];
-		for (i in rCount)
-			sorted.push([i, rCount[i][0]])
-		sorted.sort(function(a, b) {
-			return a[1] - b[1]
-		})
-		for (i in sorted) {
-			sortedNew.push(sorted[i][0])
-		}
-		return sorted;
+	}
+	//return results;
+	rCount = [];
+	for (v in results) {
+		rCount[v] = [];
+		rCount[v].push(results[v][0]);
+		rCount[v].push(results[v][1]);
+	}
+	sorted = [];
+	for (i in rCount) {
+		sorted.push([i, rCount[i][0], rCount[i][1]])
+	}
+	sorted.sort(function(a, b) {
+		return a[1] - b[1]
+	})
+	return sorted;
 	//} catch (e) {
-		return "You fucked up."
-	//}
+	return "You fucked up."
+		//}
 }
