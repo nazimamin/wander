@@ -2,7 +2,7 @@
 
 wanderApp = angular.module('wander', ['ionic']);
 
-wanderApp.controller('FeatureListCtrl', ['$scope', '$filter', function($scope, $filter) {
+wanderApp.controller('FeatureListCtrl', ['$scope', '$filter', '$state', function($scope, $filter, $state) {
   $scope.features = [
     { "id": 1, "name": "Waves", "image": "img/thumb-surf.png" },
     { "id": 2, "name": "Deserts", "image": "img/thumb-desert.png" },
@@ -39,8 +39,22 @@ wanderApp.controller('FeatureListCtrl', ['$scope', '$filter', function($scope, $
     // update user's selected features
     // results = getMemes(keywords);
     // .then/.success/.catch navigate programmatically to next view
+    // $location.path("/suggestions");
+    $state.go('results');
   }
 }]);
+
+wanderApp.config(function($stateProvider, $urlRouterProvider) {
+  $urlRouterProvider.otherwise('/')
+
+  $stateProvider.state('index', {
+    url: '/',
+    templateUrl: '../feature-list.html'
+  }).state('results', {
+    url: '/results',
+    templateUrl: '../results.html'
+  })
+});
 
 wanderApp.run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
