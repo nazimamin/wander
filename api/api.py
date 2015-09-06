@@ -17,20 +17,35 @@ class GetTripResponse(Resource):
         return make_response(jsonify( { 'error': 'not implimented' } ), 200)
     def post(self):
         parameter_data = request.get_json(force=True)
-        if parameter_data.get('cityname') and parameter_data.get('lat') and parameter_data.get('lan'):
+        if parameter_data.get('cityname') and parameter_data.get('lat') and parameter_data.get('lng'):
+            city_lat = parameter_data.get('lat')
+            city_lng = parameter_data.get('lng')
+            
             g = geocoder.google(parameter_data.get('cityname'))
-
-            current_city = g.latlng
-            destination_city = [parameter_data.get('lat'), parameter_data.get('lan')]
-
+            
+            current_city = [city_lat, city_lng]
+            
+            destination_city = g.latlng
+            
             distance = vincenty(current_city, destination_city).miles
             geolocator = Nominatim()
-            location = geolocator.reverse(parameter_data.get('lat'), parameter_data.get('lan'))
-
+            location = geolocator.reverse([city_lat, city_lng])
+            print(location)
             if(distance < 100):
-                FlightAPI = "http://www.api.wego.com/flights/api/k/2/searches"
-                FlightData = '{"trips": [{"departure_code": '+"New York City"+',"arrival_code": '+"Londond"+',"outbound_date": "2014-01-24","inbound_date": "2014-01-29"}],"adults_count": 1}'
-                FlightAPIResponse = requests.get(FlightAPI, data=FlightData)
+                url = 'https://api.uber.com/v1/estimates/price'
+                parameters = {
+                'server_token': 'KwHygnd9UVQOSWT8qJB9fhm2OoStOILx4IrBH_I6',
+                'start_latitude': city_lat,
+                'start_longitude': city_lng,
+                'end_latitude': g.latlng[0],
+                'end_longitude': g.latlng[1]
+                }
+                response = requests.get(url, params=parameters)
+                data = response.json()
+                print(data);
+            else:
+                print('do nothing')
+            
         else:
              return make_response(jsonify( { 'cats': 'school is missing' } ), 400)
 
