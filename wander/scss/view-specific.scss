@@ -11,6 +11,7 @@
 
 .feature-grid {
     flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
     .feature {
         @include rounded-corners;
         position: relative;
@@ -30,16 +31,17 @@
     }
     .feature--overlay   {
         opacity: 0;
-        transition: all 200ms ease;
-        -webkit-transition: all 200ms ease;
-    }
-    .feature.selected .feature--overlay   {
-        opacity: 1;
         height: 100%;
         width: 100%;
         position: absolute;
         top: 0;
         left: 0;
+        background-color: transparent;
+        transition: all 200ms ease;
+        -webkit-transition: all 200ms ease;
+    }
+    .feature.selected .feature--overlay   {
+        opacity: 1;
         background-color: rgba($teal, .5);
     }
     .feature--name {
@@ -69,4 +71,9 @@
 .result--link {
     width: 100%;
     height: 100%;
+}
+.result--image  {
+    width: 100%;
+    padding-top: 100%;
+    background-size: cover !important;
 }

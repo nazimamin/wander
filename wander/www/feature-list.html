@@ -13,10 +13,10 @@
       </div>
     </ul>
   </ion-content>
-  <ion-footer-bar class="bar-light">
+  <ion-footer-bar class="bar-light" ng-class="{'bar-light': !minSelected(), 'bar-calm': minSelected()}">
       <h1 class="title" ng-hide="minSelected()">Please select {{minToSelect - getSelectedFeatures().length}} more to continue</h1>
-      <button class="button button-calm" ng-click="continue()" ng-show="minSelected()">
+      <h1 class="title" ng-click="continue()" ng-show="minSelected()">
         Continue
-      </button>
+      </h1>
   </ion-footer-bar>
 </ion-pane>

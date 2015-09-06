@@ -7718,7 +7718,8 @@ a.button {
   transition-duration: 0s; }
 
 .feature-grid {
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap; }
   .feature-grid .feature {
     border-radius: .0625rem;
     position: relative;
@@ -7729,18 +7730,20 @@ a.button {
     background-position: center center !important;
     list-style: none; }
     .feature-grid .feature.selected .feature--selected {
-      transform: translate(-50%, -50%) scale(1); }
+      transform: translate(-50%, -50%) scale(1);
+      -webkit-transform: translate(-50%, -50%) scale(1); }
   .feature-grid .feature--overlay {
     opacity: 0;
-    transition: all 200ms ease;
-    -webkit-transition: all 200ms ease; }
-  .feature-grid .feature.selected .feature--overlay {
-    opacity: 1;
     height: 100%;
     width: 100%;
     position: absolute;
     top: 0;
     left: 0;
+    background-color: transparent;
+    transition: all 200ms ease;
+    -webkit-transition: all 200ms ease; }
+  .feature-grid .feature.selected .feature--overlay {
+    opacity: 1;
     background-color: rgba(28, 206, 228, 0.5); }
   .feature-grid .feature--name {
     position: absolute;
@@ -7753,6 +7756,7 @@ a.button {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(0);
+    -webkit-transform: translate(-50%, -50%) scale(0);
     color: white;
     font-size: 5em;
     text-align: center;
@@ -7765,3 +7769,8 @@ a.button {
 .result--link {
   width: 100%;
   height: 100%; }
+
+.result--image {
+  width: 100%;
+  padding-top: 100%;
+  background-size: cover !important; }
