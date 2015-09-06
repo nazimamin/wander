@@ -122,7 +122,7 @@ destinations = wander.destinations;
 function getResults(list) {
 	results = {};
 	resultsArray = [];
-	try {
+	//try {
 		for (i in list) { // list[i] =
 			for (z in answers[list[i]]['tags']) { // list[i]['tags'][z] = tag value
 				for (j in destinations) { // destinations[j] = 'Destination City'
@@ -138,25 +138,24 @@ function getResults(list) {
 			}
 		}
 		//return results;
-		rCount = {};
-		Object.keys(results).forEach(function(key) {
-			rCount[key] = [];
-			rCount[key] = results[key].length
-		})
+		rCount = [];
+		for (v in results) {
+			rCount[v] = [];
+			rCount[v].push(results[v][0]);
+			rCount[v].push(results[v].length);
+		}
 		sorted = [];
 		sortedNew = [];
 		for (i in rCount)
-			sorted.push([i, rCount[i]])
+			sorted.push([i, rCount[i][0]])
 		sorted.sort(function(a, b) {
 			return a[1] - b[1]
 		})
 		for (i in sorted) {
 			sortedNew.push(sorted[i][0])
 		}
-		return {
-			results, sortedNew
-		}
-	} catch (e) {
+		return sorted;
+	//} catch (e) {
 		return "You fucked up."
-	}
+	//}
 }
