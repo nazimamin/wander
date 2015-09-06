@@ -72,40 +72,141 @@ var wander = {
 		}
 	},
 	destinations: {
-		'Paris, France': ['architecture', 'museum', 'unique cuisine'],
-		'Agra, India': ['architecture', 'unique cuisine'],
-		'Rome, Italy': ['architecture', 'mediterranean'],
-		'Karachi, Pakistan': ['architecture', 'mediterranean'],
-		'Rome, Italy': ['architecture', 'mediterranean'],
-		'Bangkok, Thailand': ['beaches'],
-		'Catalonia, Spain': ['beaches'],
-		'Guangzhou, China': ['beaches'],
-		'Lagos, Nigeria': ['beaches'],
-		'Tokyo, Japan': ['beaches'],
-		'Shanghai, China': ['beaches'],
-		'Mumbai, India': ['beaches'],
-		'Instanbul, Turkey': ['beaches'],
-		'Dhaka, Bangladesh': ['beaches'],
-		'Lahore, Pakistan': ['beaches'],
-		'Lima, Peru': ['beaches'],
-		'Mexico City, Mexico': ['beaches'],
-		'Kinshasa, Democratic Republic of the Congo': ['beaches'],
-		'Jakarta, Indonesia': ['beaches'],
-		'Sao Paulo, Brazil': ['beaches'],
-		'Dongguan, China': ['beaches'],
-		'Seoul, South Korea': ['beaches'],
-		'Shenzhen, China': ['beaches'],
-		'London, United Kingdom': ['beaches'],
-		'Cairo, Egypt': ['beaches'],
-		'Moscow, Russia': ['beaches'],
-		'Beijing, China': ['beaches'],
-		'The Caribbean': ['beaches'],
-		'Bengaluru, India': ['beaches'],
-		'Hanoi, Vietnam': ['beaches'],
-		'Penang, Malaysia': ['cuisine'],
-		'Singapore': ['beaches'],
-		'Amsterdam, the Netherlands': ['recreation', 'nightlife'],
-		'New York City, United States': ['nightlife']
+		'Paris, France': {
+			"image": "",
+			"tags": ['architecture', 'museum', 'unique cuisine']
+		},
+		'Agra, India': {
+			"image": "",
+			"tags": ['architecture', 'unique cuisine']
+		},
+		'Rome, Italy': {
+			"image": "",
+			"tags": ['architecture', 'mediterranean']
+		},
+		'Karachi, Pakistan': {
+			"image": "",
+			"tags": ['architecture', 'mediterranean']
+		},
+		'Rome, Italy': {
+			"image": "",
+			"tags": ['architecture', 'mediterranean']
+		},
+		'Bangkok, Thailand': {
+			"image": "",
+			"tags": ['beaches']
+		},
+		'Catalonia, Spain': {
+			"image": "",
+			"tags": ['beaches']
+		},
+		'Guangzhou, China': {
+			"image": "",
+			"tags": ['beaches']
+		},
+		'Lagos, Nigeria': {
+			"image": "",
+			"tags": ['beaches']
+		},
+		'Tokyo, Japan': {
+			"image": "",
+			"tags": ['beaches']
+		},
+		'Shanghai, China': {
+			"image": "",
+			"tags": ['beaches']
+		},
+		'Mumbai, India': {
+			"image": "",
+			"tags": ['beaches']
+		},
+		'Instanbul, Turkey': {
+			"image": "",
+			"tags": ['beaches']
+		},
+		'Dhaka, Bangladesh': {
+			"image": "",
+			"tags": ['beaches']
+		},
+		'Lahore, Pakistan': {
+			"tags": ['beaches']
+		},
+		'Lima, Peru': {
+			"image": "",
+			"tags": ['beaches']
+		},
+		'Mexico City, Mexico': {
+			"image": "",
+			"tags": ['beaches']
+		},
+		'Kinshasa, Democratic Republic of the Congo': {
+			"image": "",
+			"tags":  ['beaches']
+		},
+		'Jakarta, Indonesia': {
+			"image": "",
+			"tags":  ['beaches']
+		},
+		'Sao Paulo, Brazil': {
+			"image": "",
+			"tags":  ['beaches']
+		},
+		'Dongguan, China': {
+			"image": "",
+			"tags":  ['beaches']
+		},
+		'Seoul, South Korea': {
+			"image": "",
+			"tags":  ['beaches']
+		},
+		'Shenzhen, China': {
+			"image": "",
+			"tags":  ['beaches']
+		},
+		'London, United Kingdom': {
+			"image": "",
+			"tags":  ['beaches']
+		},
+		'Cairo, Egypt': {
+			"image": "",
+			"tags":  ['beaches']
+		},
+		'Moscow, Russia': {
+			"image": "",
+			"tags":  ['beaches']
+		},
+		'Beijing, China': {
+			"image": "",
+			"tags":  ['beaches']
+		},
+		'The Caribbean': {
+			"image": "",
+			"tags":  ['beaches']
+		},
+		'Bengaluru, India': {
+			"image": "",
+			"tags":  ['beaches']
+		},
+		'Hanoi, Vietnam': {
+			"image": "",
+			"tags":  ['beaches']
+		},
+		'Penang, Malaysia': {
+			"image": "",
+			"tags":  ['cuisine']
+		},
+		'Singapore': {
+			"image": "",
+			"tags":  ['beaches']
+		},
+		'Amsterdam, the Netherlands': {
+			"image": "",
+			"tags":  ['recreation', 'nightlife']
+		},
+		'New York City, United States': {
+			"image": "",
+			"tags":  ['nightlife']
+		}
 	}
 };
 
@@ -118,6 +219,7 @@ answersObject = function()	{
 	return a;
 }();
 destinations = wander.destinations;
+
 
 function getResults(list) {
 	results = {};
