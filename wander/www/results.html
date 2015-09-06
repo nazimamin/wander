@@ -4,16 +4,18 @@
     </ion-header-bar>
     <ion-content>
         <ul class="list">
-          <li class="item" href="#" ng-repeat="result in results">
-          <a class="result--link row" ng-click="book(result)">
-            <div class="col col-33">
-                <img class="result--image" style="background: url({{result[1]}})">
+          <li class="card" href="#" ng-repeat="result in results">
+            <div class="item">
+              <a class="result--link row" ng-click="book(result)">
+                <div class="col col-33">
+                    <img class="result--image" style="background: url({{result[1]}})">
+                </div>
+                <div class="col col-67">
+                    <h2>{{result[0]}}</h2>
+                    <p><strong>What you'd like:</strong><!-- weak --> <span ng-repeat="keyword in result[2]">{{keyword}}<span ng-hide="$last">, </span></span></p>
+                </div>
+              </a>
             </div>
-            <div class="col col-67">
-                <h2>{{result[0]}}</h2>
-                <p><strong>What you'd like:</strong><!-- weak --> <span ng-repeat="keyword in result[2]">{{keyword}}<span ng-hide="$last">, </span></span></p>
-            </div>
-          </a>
           </li>
         </ul>
     </ion-content>

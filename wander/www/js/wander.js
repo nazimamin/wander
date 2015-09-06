@@ -74,27 +74,23 @@ var wander = {
 	destinations: {
 		'Paris, France': {
 			"image": "img/cities/paris.jpg",
-			"tags": ['architecture', 'museum', 'unique cuisine']
+			"tags": ['architecture', 'museums', 'unique culture']
 		},
 		'Agra, India': {
 			"image": "img/cities/agra.jpg",
-			"tags": ['architecture', 'unique cuisine']
+			"tags": ['architecture', 'unique culture']
 		},
 		'Rome, Italy': {
 			"image": "img/cities/rome.jpg",
-			"tags": ['architecture', 'mediterranean']
+			"tags": ['architecture', 'unique culture', 'cuisine']
 		},
 		'Karachi, Pakistan': {
 			"image": "img/cities/karachi.jpg",
-			"tags": ['architecture', 'mediterranean']
-		},
-		'Rome, Italy': {
-			"image": "img/cities/rome.jpg",
-			"tags": ['architecture', 'mediterranean']
+			"tags": ['hot climate']
 		},
 		'Bangkok, Thailand': {
 			"image": "img/cities/bangkok.jpg",
-			"tags": ['beaches']
+			"tags": ['hot climate', 'urban atmosphere']
 		},
 		'Catalonia, Spain': {
 			"image": "img/cities/catalonia.jpg",
@@ -106,75 +102,75 @@ var wander = {
 		},
 		'Lagos, Nigeria': {
 			"image": "img/cities/lagos.jpg",
-			"tags": ['beaches']
+			"tags": ['unique culture']
 		},
 		'Tokyo, Japan': {
 			"image": "img/cities/tokyo.jpg",
-			"tags": ['beaches']
+			"tags": ['unique culture', 'architecture']
 		},
 		'Shanghai, China': {
 			"image": "img/cities/shanghai.jpg",
-			"tags": ['beaches']
+			"tags": ['urban atmosphere']
 		},
 		'Mumbai, India': {
 			"image": "img/cities/mumbai.jpg",
-			"tags": ['beaches', 'fresh memes']
+			"tags": ['hot climate']
 		},
 		'Istanbul, Turkey': {
 			"image": "img/cities/istanbul.jpg",
-			"tags": ['beaches', 'fresh memes']
+			"tags": ['hot climate']
 		},
 		'Dhaka, Bangladesh': {
 			"image": "img/cities/dhaka.jpg",
-			"tags": ['beaches', 'fresh memes']
+			"tags": ['hot climate']
 		},
 		'Lahore, Pakistan': {
 			"image": "img/cities/lahore.jpg",
-			"tags": ['beaches', 'fresh memes']
+			"tags": ['hot climate']
 		},
 		'Lima, Peru': {
 			"image": "img/cities/lima.jpg",
-			"tags": ['beaches', 'fresh memes']
+			"tags": ['beaches']
 		},
 		'Mexico City, Mexico': {
 			"image": "img/cities/mexicocity.jpg",
-			"tags": ['beaches', 'fresh memes']
+			"tags": ['unique culture', 'architecture']
 		},
 		'Kinshasa, Democratic Republic of the Congo': {
 			"image": "img/cities/kinshasa.jpg",
-			"tags": ['beaches', 'fresh memes']
+			"tags": ['beaches', 'unique culture']
 		},
 		'Jakarta, Indonesia': {
 			"image": "img/cities/jakarta.jpg",
-			"tags": ['beaches', 'fresh memes']
+			"tags": ['beaches']
 		},
 		'Sao Paulo, Brazil': {
 			"image": "img/cities/saopaulo.jpg",
-			"tags": ['beaches', 'fresh memes']
+			"tags": ['beaches', 'natural landscapes']
 		},
 		'Seoul, South Korea': {
 			"image": "img/cities/seoul.jpg",
-			"tags": ['beaches', 'fresh memes']
+			"tags": ['urban atmosphere']
 		},
 		'Shenzhen, China': {
 			"image": "img/cities/shenzhen.jpg",
-			"tags": ['beaches', 'fresh memes']
+			"tags": ['urban atmosphere']
 		},
 		'London, United Kingdom': {
 			"image": "img/cities/london.jpg",
-			"tags": ['beaches', 'fresh memes']
+			"tags": ['sophistication', 'urban atmosphere']
 		},
 		'Cairo, Egypt': {
 			"image": "img/cities/cairo.jpg",
-			"tags": ['beaches', 'fresh memes']
+			"tags": ['hot climate']
 		},
 		'Moscow, Russia': {
 			"image": "img/cities/moscow.jpg",
-			"tags": ['beaches', 'fresh memes']
+			"tags": ['cold climate', 'snow']
 		},
 		'Beijing, China': {
 			"image": "img/cities/beijing.jpg",
-			"tags": ['beaches', 'fresh memes']
+			"tags": ['architecture', 'unique culture']
 		},
 		'Bangalore, India': {
 			"image": "img/cities/bangalore.jpg",
@@ -182,7 +178,7 @@ var wander = {
 		},
 		'Hanoi, Vietnam': {
 			"image": "img/cities/hanoi.jpg",
-			"tags": ['beaches']
+			"tags": ['cuisine', 'urban atmosphere', 'warm climate', 'natural landscapes']
 		},
 		'Penang, Malaysia': {
 			"image": "img/cities/penang.jpg",
@@ -198,7 +194,7 @@ var wander = {
 		},
 		'New York City, United States': {
 			"image": "img/cities/newyork.jpg",
-			"tags": ['nightlife']
+			"tags": ['nightlife', 'urban atmosphere', 'sophistication']
 		}
 	}
 };
