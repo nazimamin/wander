@@ -1,6 +1,6 @@
 // Wander App
 
-wanderApp = angular.module('wander', ['ionic']);
+wanderApp = angular.module('wander', ['ionic', 'uiGmapgoogle-maps']);
 
 wanderApp.controller('FeatureListCtrl', ['$scope', '$rootScope', '$filter', '$state', function($scope, $rootScope, $filter, $state) {
   $scope.features = answersObject;
@@ -32,11 +32,33 @@ wanderApp.controller('FeatureListCtrl', ['$scope', '$rootScope', '$filter', '$st
   }
 }]);
 
-wanderApp.controller('ResultsCtrl', ['$scope', '$rootScope', function($scope, $rootScope) {
+wanderApp.controller('ResultsCtrl', ['$scope', '$rootScope', '$state', function($scope, $rootScope, $state) {
   $scope.results = $rootScope.results;
+
+  $scope.book = function(result) {
+    $rootScope.destination = result[0];
+    $state.go('book');
+  }
 }]);
 
-wanderApp.config(function($stateProvider, $urlRouterProvider) {
+wanderApp.controller('BookingCtrl', ['$scope', '$rootScope', '$http', 'uiGmapGoogleMapApi', function($scope, $rootScope, $http, uiGmapGoogleMapApi) {
+  $scope.city = $rootScope.destination;
+
+  $http.get('https://maps.googleapis.com/maps/api/geocode/json?address=' + $scope.city + '&sensor=true&key=AIzaSyDa4S4iLNsRMG1C0ommlDMufI-cESxA9KQ')
+    .then(function(response) {
+      $scope.latitude = response['data']['results'][0]['geometry']['location']['lat'];
+      $scope.longitude = response['data']['results'][0]['geometry']['location']['lng'];
+
+      uiGmapGoogleMapApi.then(function(maps) {
+        $scope.map = { center: { latitude: $scope.latitude, longitude: $scope.longitude }, zoom: 13 };
+      });
+
+    }, function(response) {
+      alert("Could not geocode.");
+    });
+}]);
+
+wanderApp.config(function($stateProvider, $urlRouterProvider, uiGmapGoogleMapApiProvider) {
   $urlRouterProvider.otherwise('/')
 
   $stateProvider.state('index', {
@@ -47,7 +69,16 @@ wanderApp.config(function($stateProvider, $urlRouterProvider) {
     url: '/results',
     controller: 'ResultsCtrl',
     templateUrl: '../results.html'
-  })
+  }).state('book', {
+    url: '/book',
+    controller: 'BookingCtrl',
+    templateUrl: '../book.html'
+  });
+
+  uiGmapGoogleMapApiProvider.configure({
+    key: 'AIzaSyDa4S4iLNsRMG1C0ommlDMufI-cESxA9KQ',
+    v: '3.2.0'
+  });
 });
 
 wanderApp.run(function($ionicPlatform) {

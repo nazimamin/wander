@@ -5,9 +5,11 @@
     <ion-content>
         <ul class="list">
           <li class="item item-thumbnail-left" href="#" ng-repeat="result in results">
-            <img src="cover.jpg">
-            <h2>{{result[0]}}</h2>
-            <p><strong>What you'd like:</strong><!-- weak --> {{result[1]}}</p>
+              <a class="result--link" ng-click="book(result)">
+                <img src="cover.jpg">
+                <h2>{{result[0]}}</h2>
+                <p><strong>What you'd like:</strong><!-- weak --> {{result[1]}}</p>
+              </a>
           </li>
         </ul>
     </ion-content>
