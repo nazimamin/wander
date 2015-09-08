@@ -1,5 +1,4 @@
 # Wander
-Professor's rating from Rate My Professor's site in CUNY First
 
 ---
 
